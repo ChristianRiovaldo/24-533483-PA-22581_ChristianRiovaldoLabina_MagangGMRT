@@ -46,7 +46,8 @@ def forward_kinematics():
     for i in range(banyak_dof):
         fk @= dof[i]
         koordinat.append(fk[:3,3].copy())
-        
+    
+    print('\nForward Kinematics =\n', fk)
     koordinat = np.array(koordinat)
         
     if dimensi == 2:
@@ -69,8 +70,6 @@ def forward_kinematics():
         ax.set_zlabel('z')
         ax.grid(True)
         plt.show()
-
-    print('\nForward Kinematics =\n', fk)
     
 def inverse_kinematics():
     print('End-effector planar:')
